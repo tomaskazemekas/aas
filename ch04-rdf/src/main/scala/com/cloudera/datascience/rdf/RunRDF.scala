@@ -139,7 +139,9 @@ class RunRDF(private val spark: SparkSession) {
     }.sum
     println(accuracy)
   }
-
+  
+// Progress
+  
   def evaluate(trainData: DataFrame, testData: DataFrame): Unit = {
 
     val inputCols = trainData.columns.filter(_ != "Cover_Type")
