@@ -140,7 +140,6 @@ class RunRDF(private val spark: SparkSession) {
     println(accuracy)
   }
   
-// Progress
   
   def evaluate(trainData: DataFrame, testData: DataFrame): Unit = {
 
@@ -199,6 +198,8 @@ class RunRDF(private val spark: SparkSession) {
     val trainAccuracy = multiclassEval.evaluate(bestModel.transform(trainData))
     println(trainAccuracy)
   }
+
+  // Progress
 
   def unencodeOneHot(data: DataFrame): DataFrame = {
     val wildernessCols = (0 until 4).map(i => s"Wilderness_Area_$i").toArray
